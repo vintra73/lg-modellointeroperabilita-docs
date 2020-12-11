@@ -23,5 +23,5 @@ Versione 1.0 del 04/09/2020
   ambito-di-applicazione.rst
   riferimenti-e-sigle.rst
   sicurezza-di-canale-4.rst
-  accesso-del-fruitore-5.rst
+  accesso-del-fruitore.rst
   elementi-di-sicurezza.rst

@@ -3,6 +3,7 @@ Accesso del soggetto fruitore
 
 
 .. _id_auth_soap_01:
+
 [ID_AUTH_SOAP_01] Direct Trust con certificato X.509 su SOAP
 ------------------------------------------------------------
 
@@ -133,8 +134,9 @@ I namespace utilizzati nel tracciato sono riportati di seguito:
 
    ec="http://www.w3.org/2001/10/xml-exc-c14n#"
 
-.. code-block:: python
-   foo.xml
+.. literalinclude:: media/id-auth-soap-01-response.xml
+   :language: xml
+
 
 Il tracciato rispecchia le seguenti scelte implementative
 esemplificative:
