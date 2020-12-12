@@ -1,3 +1,5 @@
+.. _id_auth_rest_01:
+
 [ID_AUTH_REST_01] Direct Trust con certificato X.509 su REST
 ============================================================
 
@@ -7,8 +9,8 @@ messaggio:
 -  accesso del soggetto fruitore, quale organizzazione o unità
    organizzativa fruitore, o entrambe le parti.
 
-   11. .. rubric:: Descrizione
-          :name: descrizione-4
+Descrizione
+-----------
 
 Il presente profilo declina l’utilizzo di:
 
@@ -38,11 +40,11 @@ relativa risposta.
      sequenceDiagram
      
       activate Fruitore
-       activate Erogatore
+      activate Erogatore
       Fruitore->>+Erogatore: 1. Request()
       Erogatore-->>Fruitore: 2. Response
       deactivate Erogatore
-       deactivate Fruitore
+      deactivate Fruitore
 
 *Figura 5 - Accesso del Fruitore*
 
@@ -122,8 +124,8 @@ Note:
    autenticazione non DEVONO fornire informazioni sull’esistenza o meno
    dell’utenza.
 
-   13. .. rubric:: Esempio
-          :name: esempio-2
+Esempio
+-----------
 
 Di seguito è riportato un tracciato del messaggio inoltrato dal fruitore
 all’erogatore.
@@ -132,45 +134,30 @@ Esempio porzione messaggio HTTP.
 
 .. code-block:: http
 
-   GET https://api.erogatore.org/rest/service/v1/hello/echo/Ciao
-   HTTP/1.1
-   
+   GET https://api.erogatore.org/rest/service/v1/hello/echo/Ciao HTTP/1.1
    Accept: application/json
-   
    Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5c.vz8...
 
 Esempio porzione JWT
 
 .. code-block:: python
 
-   *# header*
+   # header
    
    {
-   
    "alg": "ES256",
-   
    "typ": "JWT",
-   
    "x5c": [
-   
    "MIICyzCCAbOgAwIBAgIEC..."
-   
    ]
-   
    }
    
-   *# payload*
-   
+   # *payload*
    {
-   
    "iat": 1554382877,
-   
    "nbf": 1554382877,
-   
    "exp": 1554382879,
-   
    "aud": "https://api.erogatore.org/rest/service/v1/hello/echo"
-   
    }
 
 Gli elementi presenti nel tracciato rispettano le seguenti scelte
@@ -199,11 +186,11 @@ nonché la modalità di inclusione o referenziazione del certificato X.509
      sequenceDiagram
      
       activate Fruitore
-       activate Erogatore
+      activate Erogatore
       Fruitore->>+Erogatore: 1. Request()
       Erogatore-->>Fruitore: 2. Response
       deactivate Erogatore
-       deactivate Fruitore
+      deactivate Fruitore
 
  image:: ./media/image2.png
    :width: 4.68056in

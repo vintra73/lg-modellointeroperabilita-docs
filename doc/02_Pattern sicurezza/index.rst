@@ -24,4 +24,5 @@ Versione 1.0 del 04/09/2020
   riferimenti-e-sigle.rst
   sicurezza-di-canale-4.rst
   accesso-del-fruitore.rst
+  integrita.rst
   elementi-di-sicurezza.rst

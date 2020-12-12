@@ -1,3 +1,5 @@
+.. _integrity_rest_01:
+
 [INTEGRITY_REST_01] Integrità del payload messaggio REST
 ========================================================
 
@@ -168,15 +170,10 @@ Richiesta HTTP con Digest e representation metadata
 
 .. code-block:: http
 
-   POST https://api.erogatore.org/rest/service/v1/hello/echo/
-   HTTP/1.1
-   
+   POST https://api.erogatore.org/rest/service/v1/hello/echo/ HTTP/1.1
    Accept: application/json
-   
    Agid-JWT-Signature: eyJhbGciOiJSUzI1NiIsInR5c.vz8...
-   
    Digest: SHA-256=cFfTOCesrWTLVzxn8fmHl4AcrUs40Lv5D275FmAZ96E=
-   
    Content-Type: application/json
    
    {"testo": "Ciao mondo"}
@@ -185,42 +182,25 @@ Porzione JWS con campi protetti dalla firma
 
 .. code-block:: python
 
-   *# header*
-   
+   # *header*
    {
-   
-   "alg": "ES256",
-   
-   "typ": "JWT",
-   
-   "x5c": [
-   
-   "MIICyzCCAbOgAwIBAgIEC..."
-   
-   ]
-   
+     "alg": "ES256",
+     "typ": "JWT",
+     "x5c": [
+  	   "MIICyzCCAbOgAwIBAgIEC..."
+     ]
    }
-   
-   *# payload*
+   # *payload*
    
    {
-   
-   "aud": "https://api.erogatore.org/rest/service/v1/hello/echo"
-   
-   "iat": 1516239022,
-   
-   "nbf": 1516239022,
-   
-   "exp": 1516239024,
-   
-   "signed_headers": [
-   
-   {"digest": "SHA-256=cFfTOCesrWTLVzxn8fmHl4AcrUs40Lv5D275FmAZ96E="},
-   
-   {"content-type": "application/json"}
-   
-   ],
-   
+     "aud": "https://api.erogatore.org/rest/service/v1/hello/echo"
+     "iat": 1516239022,
+     "nbf": 1516239022,
+     "exp": 1516239024,
+     "signed_headers": [
+       {"digest": "SHA-256=cFfTOCesrWTLVzxn8fmHl4AcrUs40Lv5D275FmAZ96E="},
+       {"content-type": "application/json"}
+     ],
    }
 
 Il tracciato rispecchia alcune scelte implementative esemplificative in
